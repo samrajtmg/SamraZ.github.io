@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>SamRaj Hub 🚀</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.12),
+            rgba(0,0,0,0.12)
+        ),
+        url("https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 18px;
+}
+
+
+/* 🫧 LIQUID GLASS */
+
+.glass {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 30px 24px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    backdrop-filter:
+        blur(28px)
+        saturate(160%);
+
+    -webkit-backdrop-filter:
+        blur(28px)
+        saturate(160%);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,0.4),
+
+        inset 0 1px 2px
+        rgba(255,255,255,0.6);
+}
+
+
+.content {
+
+    text-align: center;
+
+}
+
+
+h1 {
+
+    margin: 0 0 8px;
+
+    font-size: 34px;
+
+    text-shadow:
+        0 3px 15px
+        rgba(0,0,0,0.5);
+
+}
+
+
+.subtitle {
+
+    margin-bottom: 25px;
+
+    color:
+        rgba(255,255,255,0.9);
+
+    font-size: 16px;
+
+}
+
+
+/* 📱 SOCIAL BUTTON */
+
+.social {
+
+    width: 100%;
+
+    min-height: 64px;
+
+    margin: 12px 0;
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    background:
+        rgba(255,255,255,0.17);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+
+}
+
+
+.social:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+.social:hover {
+
+    background:
+        rgba(255,255,255,0.25);
+
+}
+
+
+/* SOCIAL ICON */
+
+.social-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.20);
+
+    font-size: 23px;
+
+}
+
+
+/* TEXT */
+
+.social-text {
+
+    flex: 1;
+
+    text-align: left;
+
+}
+
+
+.status {
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+    opacity: 0.75;
+
+}
+
+
+/* 🔄 LOADING */
+
+.loader {
+
+    display: none;
+
+    width: 23px;
+
+    height: 23px;
+
+    flex-shrink: 0;
+
+    border:
+
+        3px solid
+        rgba(255,255,255,0.3);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.7s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* COMPLETED */
+
+.social.completed {
+
+    background:
+        rgba(50,200,120,0.25);
+
+}
+
+
+/* 🔄 FINAL PROCESSING */
+
+#processing {
+
+    display: none;
+
+    margin-top: 28px;
+
+    text-align: center;
+
+}
+
+
+.big-loader {
+
+    width: 42px;
+
+    height: 42px;
+
+    margin:
+        0 auto 14px;
+
+    border:
+
+        3px solid
+        rgba(255,255,255,0.25);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+.processing-title {
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+}
+
+
+.processing-text {
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color:
+        rgba(255,255,255,0.75);
+
+}
+
+
+/* 🔓 GET LINK */
+
+#unlock {
+
+    display: none;
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.3);
+
+}
+
+
+/* 📱 MOBILE */
+
+@media (max-width: 500px) {
+
+    h1 {
+
+        font-size: 31px;
+
+    }
+
+    .glass {
+
+        padding:
+            28px 20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="glass">
+
+<div class="content">
+
+
+<h1>🔒 SamRaj Hub</h1>
+
+
+<div class="subtitle">
+
+Follow these steps to unlock the link 🚀
+
+</div>
+
+
+
+<!-- INSTAGRAM -->
+
+<a class="social"
+
+href="https://www.instagram.com/tmgsamraj23/"
+
+target="_blank"
+
+onclick="startTask(event,this)">
+
+
+<div class="social-icon">
+
+<i class="fa-brands fa-instagram"></i>
+
+</div>
+
+
+<div class="social-text">
+
+Follow on Instagram
+
+<div class="status">
+
+Tap to follow
+
+</div>
+
+</div>
+
+
+<div class="loader"></div>
+
+
+</a>
+
+
+
+<!-- TIKTOK -->
+
+<a class="social"
+
+href="https://www.tiktok.com/@voidsamraz"
+
+target="_blank"
+
+onclick="startTask(event,this)">
+
+
+<div class="social-icon">
+
+<i class="fa-brands fa-tiktok"></i>
+
+</div>
+
+
+<div class="social-text">
+
+Follow on TikTok
+
+<div class="status">
+
+Tap to follow
+
+</div>
+
+</div>
+
+
+<div class="loader"></div>
+
+
+</a>
+
+
+
+<!-- YOUTUBE -->
+
+<a class="social"
+
+href="https://youtube.com/@samraz11"
+
+target="_blank"
+
+onclick="startTask(event,this)">
+
+
+<div class="social-icon">
+
+<i class="fa-brands fa-youtube"></i>
+
+</div>
+
+
+<div class="social-text">
+
+Subscribe on YouTube
+
+<div class="status">
+
+Tap to subscribe
+
+</div>
+
+</div>
+
+
+<div class="loader"></div>
+
+
+</a>
+
+
+
+<!-- PROCESSING -->
+
+<div id="processing">
+
+
+<div class="big-loader"></div>
+
+
+<div class="processing-title">
+
+Processing your request...
+
+</div>
+
+
+<div class="processing-text">
+
+Preparing your link 🔐
+
+</div>
+
+
+</div>
+
+
+
+<!-- GET LINK -->
+
+<button id="unlock"
+onclick="unlockWebsite()">
+
+🔓 Get Link
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+let completed = 0;
+
+let processingStarted = false;
+
+
+
+/* SOCIAL BUTTON */
+
+function startTask(event, button) {
+
+
+event.preventDefault();
+
+
+if (
+    button.classList.contains(
+        "completed"
+    )
+) {
+
+    return;
+
+}
+
+
+const loader =
+    button.querySelector(
+        ".loader"
+    );
+
+
+const status =
+    button.querySelector(
+        ".status"
+    );
+
+
+/* SHOW LOADING */
+
+loader.style.display =
+    "block";
+
+
+status.innerText =
+    "Opening...";
+
+
+/* OPEN SOCIAL MEDIA */
+
+window.open(
+    button.href,
+    "_blank"
+);
+
+
+/*
+    Wait 10 seconds.
+    No countdown is shown.
+*/
+
+setTimeout(function() {
+
+
+loader.style.display =
+    "none";
+
+
+button.classList.add(
+    "completed"
+);
+
+
+status.innerText =
+    "✓ Step completed";
+
+
+completed++;
+
+
+/* ALL FOUR DONE */
+
+if (
+    completed === 4
+) {
+
+    startFinalProcessing();
+
+}
+
+
+}, 10000);
+
+}
+
+
+
+/* FINAL PROCESSING */
+
+function startFinalProcessing() {
+
+
+if (processingStarted) {
+
+    return;
+
+}
+
+
+processingStarted = true;
+
+
+document.getElementById(
+    "processing"
+).style.display =
+    "block";
+
+
+/*
+    Final processing:
+    3 seconds.
+*/
+
+setTimeout(function() {
+
+
+document.querySelector(
+    ".big-loader"
+).style.display =
+    "none";
+
+
+document.querySelector(
+    ".processing-title"
+).innerText =
+    "Ready! 🔓";
+
+
+document.querySelector(
+    ".processing-text"
+).innerText =
+    "Your link is ready";
+
+
+document.getElementById(
+    "unlock"
+).style.display =
+    "block";
+
+
+}, 3000);
+
+}
+
+
+
+/* FINAL LINK */
+
+function unlockWebsite() {
+
+
+window.location.href =
+
+"https://www.mediafire.com/file/k92c27s3fqro0ye/FreeFire2022Indian-server-32bit.xapk.zip/file";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
